@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react'
+import { Spin } from 'antd'
+import { Router } from '@reach/router'
+import 'antd/dist/antd.css'
+import './App.css'
+
+const Register = lazy(
+  () =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(import('./Register')), 500)
+    })
+)
+
+const Admin = lazy(
+  () =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(import('./Admin')), 500)
+    })
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Suspense className="App" fallback={<Spin className="center" />}>
+      <Router>
+        <Register path="/register" />
+        <Admin path="/register/admin" />
+      </Router>
+    </Suspense>
+  )
 }
 
-export default App;
+export default App

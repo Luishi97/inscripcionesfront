@@ -1,0 +1,72 @@
+@import 'mixins'
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap')
+
+.register__container
+    height: 100vh
+    padding-right: 2rem
+    padding-left: 2rem
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .5)
+    overflow: hidden
+    background-color: #2980B9
+    .register
+        height: 90vh
+        margin: 5vh auto
+        border-radius: 1rem
+        @include scroll-bar
+        border: 2px solid #E74C3C
+        border-radius: 1rem
+        background-color: #F8F9F9
+        transition: all .3s
+        .register__forms
+            margin: auto
+            transition: all .3s
+            h1
+                font-family: 'Ubuntu', sans-serif
+                text-align: center
+
+.steps__container
+    background-image: url('https://cdn.dribbble.com/users/772985/screenshots/10906911/media/08d2baa0f6df9ee45863df0b2abb8067.png?compress=1&resize=1600x1200')
+    // background-image: url('https://cdn.dribbble.com/users/772985/screenshots/14023312/media/69d2cb8ecca9c48d1bce9c3fe6dda955.png?compress=1&resize=1600x1200')
+    background-position: center
+    background-size: cover
+    transition: all .3s
+    .steps
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        margin-top: 10%
+        background: rgba( 255, 255, 255, 0.5 )
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+        backdrop-filter: blur(2px)
+        -webkit-backdrop-filter: blur(2px)
+        border-radius: 10px
+        border: 1px solid rgba( 255, 255, 255, 0.18 )
+        transition: all .3s
+    .logo
+        width: 15rem
+        height: 15rem
+        margin: auto
+
+// transition effect
+.alert-enter 
+    position: absolute
+    opacity: 0
+    transform: scale(1.1) translate(-5rem)
+.alert-enter-active 
+    opacity: 1
+    transform: translateX(0)
+    transition: opacity 300ms, transform 300ms
+.alert-exit 
+    opacity: 1
+.alert-exit-active 
+    opacity: 0
+    transform: scale(1.1) translate(-5rem)
+    transition: opacity 300ms, transform 300ms
+
+    
+@media only screen and (min-width: 768px)
+    .steps__container
+        .steps
+            height: 80%
+            flex-direction: row
