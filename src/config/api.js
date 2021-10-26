@@ -3,9 +3,10 @@ import axios from 'axios'
 import './notifications.sass'
 
 const HOST_API = process.env.REACT_APP_HOST_API
+const HOST_PORT = process.env.REACT_APP_HOST_PORT
 
 const api = axios.create({
-  baseURL: `http://${HOST_API}/api/`,
+  baseURL: `http://${HOST_API}:${HOST_PORT}/api/`,
   timeout: 5000,
   headers: { 'Content-Type': 'application/json' },
   mode: 'cors'
