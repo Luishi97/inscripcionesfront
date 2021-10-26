@@ -1,7 +1,7 @@
+import { useState } from 'react'
 import { Table } from 'antd'
 import { useGetColumns } from './DataTableConfig'
 import PropTypes from 'prop-types'
-import { useState, Fragment } from 'react'
 import StudentDetail from '../StudentDetail'
 
 export default function ListOfStudents({ data, isLoading }) {
